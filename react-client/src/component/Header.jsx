@@ -4,15 +4,17 @@ function Heading() {
     return (
         <section id="header_section">
             <nav className="navbar navbar-expand-lg nav-custom">
-                <div className="container-fluid">
-                    <div className="navbar-nav">
-                        <a className="navbar-brand" href="/">Logo</a>
-                        <a className="nav-link" href="/">Home</a>
+                <div className="container-fluid" style={{width: "85%"}}>
+                    <a className="navbar-brand" style={{fontSize: "xx-large"}} href="/">
+                        <img src="images/Logo.png" alt=""/>
+                        C.H.E.E.R.S.
+                    </a>
+                    <div className="navbar-nav align-items-center w-100 justify-content-around">
                         <a className="nav-link" href="/">About</a>
-                        <a className="nav-link" href="/">Programs</a>
                         <a className="nav-link" href="/">Impact</a>
-                        <a className="nav-link" href="/">Media</a>
-                        <a className="nav-link" href="/">Join Us</a>
+                        <a className="nav-link" href="/">Programs</a>
+                        <a className="nav-link" href="/">Flyers</a>
+                        <a className="nav-link" href="/">Get Involved</a>
                     </div>
                 </div>
             </nav>

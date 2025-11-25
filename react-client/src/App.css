@@ -55,12 +55,35 @@
     --grey: #C3C3C3;
 }
 
+.btn-outline-primary {
+    color: var(--dark-blue) !important;
+    border-color: var(--dark-blue) !important;
+    border-width: 2px !important;
+    font-weight: bold !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--dark-blue) !important;
+    color: var(--white) !important;
+}
+
+.page {
+    margin: 25px;
+}
+
 .nav-custom {
-    background-color: var(--gold);
+    background-color: var(--dark-blue);
 }
 
 .nav-custom .navbar-brand, .nav-custom .nav-link{
-    color: var(--black);
+    color: var(--white);
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#header_section img {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 footer {
@@ -68,6 +91,25 @@ footer {
     height: 90px;
     padding-top: 2%;
     text-align: center;
-    background-color: var(--gold);
-    color: var(--black);
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.blue_bold {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+.program_card img {
+    width: auto;
+    padding: 10%;
+}
+
+.program_card {
+    border-color: var(--dark-blue) !important;
+    border-width: 2px !important;
 }
