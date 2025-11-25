@@ -12,7 +12,7 @@ function Heading() {
                     <div className="navbar-nav align-items-center w-100 justify-content-around">
                         <a className="nav-link" href="/">About</a>
                         <a className="nav-link" href="/">Impact</a>
-                        <a className="nav-link" href="/">Programs</a>
+                        <a className="nav-link" href="/Programs">Programs</a>
                         <a className="nav-link" href="/">Flyers</a>
                         <a className="nav-link" href="/">Get Involved</a>
                     </div>

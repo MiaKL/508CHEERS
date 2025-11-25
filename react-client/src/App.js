@@ -4,12 +4,17 @@ import Heading from './component/Header';
 import Footer from './component/Footer';
 import Programs from './component/Programs';
 
+import {Routes, Route} from 'react-router-dom';
+
 function App() {
     return (
         <div className="App">
             <div>
                 <Heading/>
-                <Programs/>
+                <Routes>
+                    <Route path="/" element={<p>Content to be added...</p>}/>
+                    <Route path="/Programs" element={<Programs/>}/>
+                </Routes>
                 <Footer/>
             </div>
         </div>
