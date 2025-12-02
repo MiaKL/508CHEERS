@@ -10,14 +10,16 @@ function Heading() {
                         C.H.E.E.R.S.
                     </a>
                     <div className="navbar-nav align-items-center w-100 justify-content-around">
-                        <a className="nav-link" href="/">About</a>
-                        <a className="nav-link" href="/">Impact</a>
                         <a className="nav-link" href="/Programs">Programs</a>
-                        <a className="nav-link" href="/">Flyers</a>
-                        <a className="nav-link" href="/">Get Involved</a>
+                        <a className="nav-link" href="/">Flyers & Downloads</a>
+                        <a className="nav-link" href="/">Partners</a>
+                        <a className="nav-link" href="/">Volunteer</a>
+                        <a className="nav-link" href="/">About</a>
+                        <button className="btn btn-primary" href="/">Donate</button>
                     </div>
                 </div>
             </nav>
+            <hr/>
         </section>
     );
 }
