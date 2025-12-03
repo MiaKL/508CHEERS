@@ -7,6 +7,8 @@ import Programs from './component/Programs';
 import ProgramDetails from './component/ProgramDetails';
 import About from './component/About';
 import VolunteerForm from "./component/VolunteerForm";
+import YouthForm from "./component/YouthForm";
+import PartnerForm from "./component/PartnerForm";
 
 import {Routes, Route} from 'react-router-dom';
 
