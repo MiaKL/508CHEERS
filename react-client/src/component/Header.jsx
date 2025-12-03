@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Heading() {
     return (
@@ -13,7 +14,7 @@ function Heading() {
                         <a className="nav-link" href="/Programs">Programs</a>
                         <a className="nav-link" href="/">Flyers & Downloads</a>
                         <a className="nav-link" href="/">Partners</a>
-                        <a className="nav-link" href="/">Volunteer</a>
+                        <Link className="nav-link" to="/Volunteer-Form">Volunteer</Link>
                         <a className="nav-link" href="/">About</a>
                         <button className="btn btn-primary" href="/">Donate</button>
                     </div>

@@ -178,3 +178,67 @@ h1 {
 .back_button:hover {
     opacity: 0.8;
 }
+
+
+
+/*Forms css*/
+.form-box {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 12px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.volunteer-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.volunteer-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.table-input {
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid #d0d0d0;
+}
+
+.form-label {
+    text-align: left !important;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.required-label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+.checkbox-fix {
+    margin-top: 0;
+    margin-right: 6px;
+}
+
+.submit-btn {
+    padding: 10px 40px;
+    font-size: 18px;
+    border: 2px solid #005491;
+    background-color: white;
+    color: #005491;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
