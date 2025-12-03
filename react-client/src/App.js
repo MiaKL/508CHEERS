@@ -5,6 +5,7 @@ import Footer from './component/Footer';
 import Programs from './component/Programs';
 import ProgramDetails from './component/ProgramDetails';
 import About from './component/About';
+import Homepage from './component/Homepage';
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -14,7 +15,7 @@ function App() {
             <div>
                 <Heading/>
                 <Routes>
-                    <Route path="/" element={<p>Content to be added...</p>}/>
+                    <Route path="/" element={<Homepage/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="/Programs" element={<Programs/>}/>
                     <Route path="/Program-Details" element={<ProgramDetails/>}/>

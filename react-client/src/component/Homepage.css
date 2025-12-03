@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Quicksand:wght@600;700&display=swap');
+
+:root{
+  /* Color Styles */
+  --blue: #00508D;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Font shorthand variables (weight size family) */
+  /* Format: weight size/line-height family, fallback-family... */
+  --title-font: 700 64px/1.05 "SF Pro", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h1-bold-font: 700 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h1-font: 400 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h2-font: 400 32px/1.1 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h2-bold-font: 700 32px/1.1 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h3-font: 400 24px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h3-bold-font: 700 24px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-font: 400 24px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-bold-font: 700 24px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --button-font: 700 16px/1.25 "Quicksand", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --large-button-font: 600 24px/1.25 "Quicksand", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --p-font: 400 16px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --stats-font: 400 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --brand-font: 800 28px "SF Pro";
+  --value-letter-font: 800 64px "SF Pro";
+
+}
+.title {text-align:center;font:var(--title-font);margin:15px 0}
+.header{text-align:center;font:var(--h1-bold-font);margin:15px 0}
+.subtext {text-align: center;font: var(--h2-font);}
+.subtext-bold {text-align: center;font: var(--h2-bold-font);}
+.body-text-bold{font: var(--body-bold-font);}
+.body-text{font: var(--body-font);}
+
+
+/* title/hero */
+.hero-title {
+    margin: 15px;
+    text-align: center;
+}
+
+.cheers-subtitle {text-align:center;font:var(--h2-bold-font); color: var(--blue); margin:15px 0}
+
+/* button in the title */
+.btn-row{
+  display: flex;
+  width: 100%;
+  max-width: 748px;
+  padding: 0 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin: 0 auto;
+}
+
+.btn-row .btn{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 0;
+  font: var(--h3-bold-font);
+}
+
+
+/* blue line */
+.section-divider{height:4px;background:var(--blue);width: 95%;margin:25px auto}
+
+/* who we are */
+.who-we-are{
+  text-align: center;
+  font: var(--h2-font);
+  gap: 25px;
+  width: 100%;
+  padding: 10px 50px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: var(--black);
+}
+
+/* Info section */
+.info-section{
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  padding: 10px 50px;
+  align-items: flex-start;
+}
+
+.programs{
+    border: #00508D 2px solid;
+    padding: 25px;
+}
+
+/* Programs section buttons*/
+.programs .btn-row{
+  display: flex;
+  gap: 80px; 
+  align-items: flex-start;
+}
+
+.programs .btn-row .btn-col{
+  display: flex;
+  flex-direction: column;
+  gap: 80px; 
+}
+
+.programs .btn-row .btn{
+  width: 220px; 
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Contact Us Section */
+.contact-us {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* keep contact content constrained like other sections */
+  padding: 25px 50px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  gap: 150px;
+}
+
+/* Contact logo sizing */
+.contact-us > img{
+  width: 150px;
+  max-width: 150px;
+  height: auto; /* keep aspect ratio and allow shrinking */
+  object-fit: contain;
+  display: block;
+}
+
+/* Let the two text columns shrink and wrap cleanly instead of causing overflow */
+.contact-us > div{
+  flex: 1 1 0;
+  min-width: 0; /* allow the flex item to shrink below its content width */
+}
+
+/* Reduce the huge gap on medium screens to avoid horizontal overflow */
+@media (max-width: 1200px){
+  .contact-us{ gap: 80px; }
+}
+
+/* Mobile: stack contact content and shrink logo */
+@media (max-width: 768px){
+  .contact-us{
+    flex-direction: column;
+    padding: 0 16px;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .contact-us > img{
+    width: 120px;
+    max-width: 40%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .contact-us > div{
+    width: 100%;
+    text-align: center; /* keep content centered like before */
+  }
+}
+
+/* Responsive: stack buttons on small screens (like col-sm-12) */
+@media (max-width: 576px) {
+  .btn-row{
+    flex-direction: column;
+    width: 100%;
+    padding: 16px 16px;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .btn-row .btn{
+    flex: none;
+    width: 100%;
+  }
+}
+
+
+.info-section > div{
+  flex: 1 1 0; /* both columns expand equally to fill width */
+}
+
+/* Ensure columns stack on small screens */
+@media (max-width: 768px){
+  .info-section{
+    flex-direction: column;
+    padding: 10px 16px; /* reduce side padding so content fills available space */
+    align-items: stretch; /* make children take full width */
+    gap: 20px;
+  }
+
+  /* When stacked, ensure headers and paragraphs align left and fill width */
+  .info-section .header,
+  .info-section .subtext{
+    text-align: left;
+    width: 100%;
+  }
+
+  .info-section > div{
+    width: 100%;
+  }
+
+  /* make who-we-are fill available width on small screens like info-section */
+  .who-we-are{
+    padding: 0 16px;
+  }
+
+  /* make contact-us stack and fill width on small screens */
+  .contact-us{
+    flex-direction: column;
+    padding: 0 16px;
+    align-items: stretch;
+    gap: 16px;
+  }
+}
+
+/* Desktop: ensure info-section headings/paragraphs are left-aligned inside their columns */
+.info-section .header,
+.info-section .subtext,
+.info-section .what-we-do,
+.info-section .programs{
+  text-align: left;
+}
+
+/* Responsive: stack and make buttons full-width on small screens */
+@media (max-width: 1210px){
+  .programs .btn-row{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .programs .btn-row .btn-col{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .programs .btn-row .btn{
+    width: 100%;
+  }
+}
+
+/* Subscribe form layout: centered, 70% width, input + button on one row */
+.subscribe-form{
+  display: flex;
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto 18px auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.subscribe-form .subscribe-input{
+  flex: 1 1 auto;
+  min-width: 0; /* prevent overflow in flex */
+  padding: 10px 12px;
+  font: var(--h2-font);
+  border-radius: 0; /* remove rounded corners */
+  box-sizing: border-box;
+}
+
+.subscribe-form .subscribe-btn{
+  flex: 0 0 auto;
+  border-radius: 0;
+  font: var(--h3-bold-font);
+  padding: 10px 16px;
+}
+
+@media (max-width: 576px){
+  .subscribe-form{
+    width: 90%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscribe-form .subscribe-btn{
+    width: 100%;
+  }
+}
