@@ -134,7 +134,7 @@ function ProgramDetails() {
                             <p className="text-start">{programDetails.overview}</p>
                             <p className="text-start">{programDetails.description}</p>
                         </div>
-                        <button type="button" className="btn btn-outline-primary" style={{width: "200px"}}>Sign Up</button>
+                        <a className="btn btn-outline-primary" style={{width: "200px"}} href="/Youth-Form" role="button">Sign Up</a>
                     </div>
                 </div>
             </div>

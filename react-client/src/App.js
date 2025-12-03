@@ -6,6 +6,7 @@ import Footer from './component/Footer';
 import Programs from './component/Programs';
 import ProgramDetails from './component/ProgramDetails';
 import About from './component/About';
+import VolunteerForm from "./component/VolunteerForm";
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -19,6 +20,9 @@ function App() {
                     <Route path="/About" element={<About/>}/>
                     <Route path="/Programs" element={<Programs/>}/>
                     <Route path="/Program-Details" element={<ProgramDetails/>}/>
+                    <Route path="/Volunteer-Form" element={<VolunteerForm />} />
+                    <Route path="/Youth-Form" element={<YouthForm />} />
+                    <Route path="/Partner-Form" element={<PartnerForm />} />
                 </Routes>
                 <Footer/>
             </div>

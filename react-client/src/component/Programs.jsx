@@ -43,7 +43,7 @@ function Programs() {
                 </div>
             </div>
             <div>
-                <button type="button" className="btn btn-outline-primary" style={{width: "50%"}}>Sign Up</button>
+                <a className="btn btn-outline-primary" style={{width: "50%"}} href="/Youth-Form" role="button">Sign Up</a>
             </div>
         </section>
     );
