@@ -16,7 +16,7 @@ function App() {
                 <Heading/>
                 <Routes>
                     <Route path="/" element={<p>Content to be added...</p>}/>
-                    <Route path="/about" element={<About/>}/>
+                    <Route path="/About" element={<About/>}/>
                     <Route path="/Programs" element={<Programs/>}/>
                     <Route path="/Program-Details" element={<ProgramDetails/>}/>
                 </Routes>
