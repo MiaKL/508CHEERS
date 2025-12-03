@@ -113,3 +113,118 @@ h1 {
     border-color: var(--dark-blue) !important;
     border-width: 2px !important;
 }
+
+
+
+/* Volunteer Form basic layout */
+
+.volunteer-container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.volunteer-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.volunteer-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Submit button styled like your screenshot */
+.submit-btn {
+    padding: 10px 40px;
+    font-size: 18px;
+    border: 2px solid #005491;
+    background-color: #fff;
+    color: #005491;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #005491;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*form css*/
+.form-label {
+    text-align: left !important;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.required-label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+.table-input {
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid #d1d1d1;
+}
+
+.checkbox-fix {
+    margin-top: 0;
+    margin-right: 6px;
+}
+
+.volunteer-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.volunteer-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.submit-btn {
+    padding: 10px 40px;
+    font-size: 18px;
+    border: 2px solid #005491;
+    background-color: #fff;
+    color: #005491;
+    border-radius: 6px;
+}
+
+.form-box {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 12px;
+    max-width: 1050px;
+    margin: 0 auto 60px auto;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e5e5;
+}
+
+.form-box .form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.table-input {
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid #d0d0d0;
+}
+
+
