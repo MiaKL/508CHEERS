@@ -9,6 +9,7 @@ import About from './component/About';
 import VolunteerForm from "./component/VolunteerForm";
 import YouthForm from "./component/YouthForm";
 import PartnerForm from "./component/PartnerForm";
+import Homepage from './component/Homepage';
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -18,7 +19,7 @@ function App() {
             <div>
                 <Heading/>
                 <Routes>
-                    <Route path="/" element={<p>Content to be added...</p>}/>
+                    <Route path="/" element={<Homepage/>}/>
                     <Route path="/About" element={<About/>}/>
                     <Route path="/Programs" element={<Programs/>}/>
                     <Route path="/Program-Details" element={<ProgramDetails/>}/>

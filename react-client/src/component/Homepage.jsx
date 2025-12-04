@@ -26,8 +26,8 @@ export default function Homepage() {
                 <h1 className="title"> C.H.E.E.R.S</h1>
                 <h2 className="cheers-subtitle">If we all do a little, the results will be a lot. little, the results will be a lot.</h2>
                 <div className='btn-row d-flex justify-content-center gap-3'>
-                    <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}>Partner With Us</button>
-                    <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}>Volunteer</button>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Partner-Form')}>Partner With Us</button>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Volunteer-Form')}>Volunteer</button>
                 </div>
             </div>
         
@@ -59,12 +59,12 @@ export default function Homepage() {
                     <p className="body-text-bold"> Quick access to programs details, download flyers, and partnership materials for the schools and funders.</p>
                     <div className='btn-row'>
                         <div className='btn-col'>
-                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}>View Programs</button>
-                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}>Info</button>
+                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Programs')}>View Programs</button>
+                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/About')}>Info</button>
                         </div>
                         <div className='btn-col'>
-                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}> Download Flyers </button>
-                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Program-Details')}>Donate</button>
+                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/')}> Download Flyers </button>
+                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('https://secure.qgiv.com/for/508cheers')}>Donate</button>
                         </div>
                     </div>
                 </div>
