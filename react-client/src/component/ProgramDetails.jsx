@@ -124,17 +124,17 @@ function ProgramDetails() {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-4 me-1" style={{alignSelf: "center"}}>
+                    <div className="col-md-4 me-md-1" style={{alignSelf: "center", paddingBottom: "30px"}}>
                         <img className="card-img-top" src={programDetails.imageURL} alt="Program"/>
                     </div>
-                    <div className="col-7">
+                    <div className="col-md-7">
                         <h2 className="blue_bold">{programDetails.title}</h2>
                         <h5 className="bold">Meets {convertDayToText(programDetails.day)}s {convertToStdTimeText(programDetails.startTime, false)}-{convertToStdTimeText(programDetails.endTime, true)}</h5>
-                        <div className="container">
+                        <div className="container" style={{paddingTop: "20px"}}>
                             <p className="text-start">{programDetails.overview}</p>
                             <p className="text-start">{programDetails.description}</p>
                         </div>
-                        <a className="btn btn-outline-primary" style={{width: "200px"}} href="/Youth-Form" role="button">Sign Up</a>
+                        <a className="btn btn-outline-primary" style={{width: "200px", marginTop: "20px"}} href="/Youth-Form" role="button">Sign Up</a>
                     </div>
                 </div>
             </div>

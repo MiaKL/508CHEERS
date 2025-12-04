@@ -29,10 +29,12 @@ function Programs() {
         <section id="programs_section" className="page">
             <div>
                 <h1>Youth Programs</h1>
-                <h4 className="blue_bold">Empowering Worcester - One Act at a Time.</h4>
+            </div>
+            <div>
+                <h4 className="programs-subtitle">Empowering Worcester - One Act at a Time.</h4>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="program-grid">
                     {
                         programs.map(function(program, idx) {
                             return (
@@ -43,7 +45,7 @@ function Programs() {
                 </div>
             </div>
             <div>
-                <a className="btn btn-outline-primary" style={{width: "50%"}} href="/Youth-Form" role="button">Sign Up</a>
+                <a className="btn btn-outline-primary" style={{width: "50%", marginTop: "25px"}} href="/Youth-Form" role="button">Sign Up</a>
             </div>
         </section>
     );

@@ -29,9 +29,24 @@ function YouthForm() {
         });
     }
 
+    function clearForm() {
+        setFormData({
+            firstName: "",
+            lastName: "",
+            parentName: "",
+            parentEmail: "",
+            parentPhone: "",
+            accommodations: "",
+            programsInterested: "",
+            consent: false
+        });
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(formData);
         alert("Youth form submitted!");
+        clearForm();
     }
 
     return (
@@ -44,7 +59,7 @@ function YouthForm() {
                 Service, Advocacy & Equity, Girls Mentorship, and Cultural Cooking initiatives.
             </p>
 
-            <div className="form-box">
+            <div className="form-box" id={"youth_form"}>
                 <form onSubmit={handleSubmit}>
 
                     <div className="row mb-3">
@@ -155,7 +170,7 @@ function YouthForm() {
                     </div>
 
                     <div className="text-center">
-                        <button type="submit" className="submit-btn">Submit</button>
+                        <button type="submit" className="submit-btn btn btn-outline-primary">Submit</button>
                     </div>
 
                 </form>

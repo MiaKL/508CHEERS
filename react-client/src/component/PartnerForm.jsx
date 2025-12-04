@@ -29,9 +29,24 @@ function PartnerForm() {
         });
     }
 
+    function clearForm() {
+        setFormData({
+            businessName: "",
+            contactName: "",
+            primaryEmail: "",
+            primaryPhone: "",
+            secondaryEmail: "",
+            secondaryPhone: "",
+            feedback: "",
+            agree: false
+        });
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(formData);
         alert("Partner form submitted!");
+        clearForm();
     }
 
     return (
@@ -157,7 +172,7 @@ function PartnerForm() {
                     </div>
 
                     <div className="text-center">
-                        <button type="submit" className="submit-btn">Submit</button>
+                        <button type="submit" className="submit-btn btn btn-outline-primary">Submit</button>
                     </div>
 
                 </form>

@@ -29,9 +29,24 @@ function VolunteerForm() {
         });
     }
 
+    function clearForm() {
+        setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            emergencyName: "",
+            emergencyPhone: "",
+            accommodations: "",
+            availability: "",
+            consent: false
+        });
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(formData);
         alert("Form submitted!");
+        clearForm();
     }
 
     return (
@@ -155,7 +170,7 @@ function VolunteerForm() {
                     </div>
 
                     <div className="text-center">
-                        <button className="submit-btn" type="submit">Submit</button>
+                        <button className="submit-btn btn btn-outline-primary" type="submit">Submit</button>
                     </div>
 
                 </form>

@@ -16,12 +16,12 @@ export default function About() {
       imgSrc: '/images/avatar.png'
     },
     {
-      name: 'Echo Louissaint',
+      name: 'Board Member',
       bio: 'Body text for bio here. More description. Even more description. Another bit of description. Final part of the description.',
       imgSrc: '/images/avatar.png'
     },
     {
-      name: 'Echo Louissaint',
+      name: 'Board Member',
       bio: 'Body text for bio here. More description. Even more description. Another bit of description. Final part of the description.',
       imgSrc: '/images/avatar.png'
     },
@@ -114,7 +114,7 @@ export default function About() {
               <h2 className="partners-title">Meet Our Partners</h2>
               <PartnerCarousel />
               <div className="partner-cta">
-                <a className="outlined-btn" href="/Partner-Form">Become a Partner</a>
+                <a className="outlined-btn btn btn-outline-primary" href="/Partner-Form">Become a Partner</a>
               </div>
             </section>
 

@@ -81,9 +81,20 @@ export default function Homepage() {
                     <button type="submit" className="btn btn-outline-primary subscribe-btn">Subscribe</button>
                 </form>
                 <h1 className="header"> Connect With Us  </h1>
-                <a href="https://www.instagram.com/508CHEERS" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/instagram-icon.png" alt="Instagram" />
-                </a>
+                <div className="container" style={{width: "300px"}}>
+                    <div className="row">
+                        <a href="https://www.instagram.com/508CHEERS" className="col-4 socialIcon" target="_blank" rel="noopener noreferrer">
+                            {/*<img src="/images/instagram-icon.png" alt="Instagram" />*/}
+                            <i className="bi bi-instagram" style={{fontSize: "50px"}}></i>
+                        </a>
+                        <a href="https://www.facebook.com/508cheers" className="col-4 socialIcon" target="_blank" rel="noopener noreferrer">
+                            <i className="bi bi-facebook" style={{fontSize: "50px"}}></i>
+                        </a>
+                        <a href="https://www.youtube.com/@508CHEERS" className="col-4 socialIcon" target="_blank" rel="noopener noreferrer">
+                            <i className="bi bi-youtube" style={{fontSize: "50px"}}></i>
+                        </a>
+                    </div>
+                </div>
 
                 {/* Line */}
                 <div className="section-divider" />

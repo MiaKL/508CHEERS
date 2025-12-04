@@ -6,9 +6,9 @@ function ProgramCard(props) {
     const program = props.program;
     const navigate = useNavigate();
     return (
-        <div className="col-4">
+        <div className="program-card-wrapper">
             <div className="card program_card">
-                <img className="card-img-top" src={program.imageURL} alt="Program"/>
+                <img className="card-img-top" src={program.imageURL} alt="Loading Image..."/>
                 <div className="card-body">
                     <h5 className="card-title">{program.title}</h5>
                     <p className="card-text">{program.overview}</p>

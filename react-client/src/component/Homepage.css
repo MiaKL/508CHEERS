@@ -287,3 +287,11 @@
     width: 100%;
   }
 }
+
+.socialIcon {
+    color: var(--blue);
+}
+
+.socialIcon:hover {
+    color: var(--black);
+}

@@ -88,10 +88,14 @@
     background-color: var(--white);
 }
 
-.nav-custom .navbar-brand, .nav-custom .nav-link{
+.nav-custom .navbar-brand, .nav-custom .nav-link {
     color: var(--dark-blue);
     font-size: x-large;
     font-weight: bold;
+}
+
+.nav-custom .navbar-brand:hover, .nav-custom .nav-link:hover {
+    color: var(--black);
 }
 
 hr {
@@ -141,7 +145,15 @@ h1 {
 .program_card {
     border-color: var(--dark-blue) !important;
     border-width: 2px !important;
-    height: 600px !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+.program_card button {
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .card-text {
@@ -149,8 +161,8 @@ h1 {
 }
 
 #programs_section div {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 #program_details_section {
@@ -202,6 +214,11 @@ h1 {
 }
 
 .volunteer-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.programs-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
 }
@@ -345,5 +362,29 @@ h1 {
     margin-bottom: 20px;
 }
 
+.program-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 20px;
+}
 
+.program-card-wrapper {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+}
 
+/* medium screen */
+@media (max-width: 991px) {
+    .program-grid {
+        column-count: 2;
+    }
+}
+
+/* small screen */
+@media (max-width: 575px) {
+    .program-grid {
+        column-count: 1;
+    }
+}

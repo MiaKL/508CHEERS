@@ -3,12 +3,12 @@ import React from "react";
 function FlyersDownloads() {
 
     const flyers = [
-        "Mentorship and Girls Program Flyer 2025- 508 C.H.E.E.R.S.-images-0.jpg",
-        "Mentorship and Girls Program Flyer 2025- 508 C.H.E.E.R.S.-images-1.jpg",
-        "Program Offerings and Ways to Support 2025- 508 C.H.E.E.R.S.-images-0.jpg",
-        "Program Offerings and Ways to Support 2025- 508 C.H.E.E.R.S.-images-1.jpg",
-        "Why We CHEERS- 508 C.H.E.E.R.S. 2025_page-0001.jpg",
-        "Why We CHEERS- 508 C.H.E.E.R.S. 2025_page-0002.jpg"
+        "Mentorship_and_Girls_Program_Flyer_2025-508_CHEERS-images-0.jpg",
+        "Mentorship_and_Girls_Program_Flyer_2025-508_CHEERS-images-1.jpg",
+        "Program_Offerings_and_Ways_to_Support_2025-508_CHEERS-images-0.jpg",
+        "Program_Offerings_and_Ways_to_Support_2025-508_CHEERS-images-1.jpg",
+        "Why_We_CHEERS-508_CHEERS_2025_page-0001.jpg",
+        "Why_We_CHEERS-508_CHEERS_2025_page-0002.jpg",
     ];
 
     return (
