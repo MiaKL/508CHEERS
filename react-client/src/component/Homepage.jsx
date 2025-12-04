@@ -63,7 +63,7 @@ export default function Homepage() {
                             <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/About')}>Info</button>
                         </div>
                         <div className='btn-col'>
-                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/')}> Download Flyers </button>
+                            <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/FlyersDownloads')}> Download Flyers </button>
                             <button type="button" className="btn btn-outline-primary" onClick={() => navigate('https://secure.qgiv.com/for/508cheers')}>Donate</button>
                         </div>
                     </div>
