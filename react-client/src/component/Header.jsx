@@ -11,7 +11,7 @@ function Heading() {
                     </a>
                     <div className="navbar-nav align-items-center w-100 justify-content-around">
                         <a className="nav-link" href="/Programs">Programs</a>
-                        <a className="nav-link" href="/">Flyers & Downloads</a>
+                        <a className="nav-link" href="/FlyersDownloads">Flyers & Downloads</a>
                         <a className="nav-link" href="/Partner-Form">Partner</a>
                         <a className="nav-link" href="/Volunteer-Form">Volunteer</a>
                         <a className="nav-link" href="/About">About</a>

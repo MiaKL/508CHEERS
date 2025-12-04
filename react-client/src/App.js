@@ -10,6 +10,7 @@ import VolunteerForm from "./component/VolunteerForm";
 import YouthForm from "./component/YouthForm";
 import PartnerForm from "./component/PartnerForm";
 import Homepage from './component/Homepage';
+import FlyersDownloads from "./component/FlyersDownloads";
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/Volunteer-Form" element={<VolunteerForm />} />
                     <Route path="/Youth-Form" element={<YouthForm />} />
                     <Route path="/Partner-Form" element={<PartnerForm />} />
+                    <Route path="/FlyersDownloads" element={<FlyersDownloads />} />
                 </Routes>
                 <Footer/>
             </div>
