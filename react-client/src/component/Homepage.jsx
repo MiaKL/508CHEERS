@@ -24,7 +24,7 @@ export default function Homepage() {
             {/* Hero Title Section */}
             <div className="hero-title">
                 <h1 className="title"> C.H.E.E.R.S</h1>
-                <h2 className="cheers-subtitle">If we all do a little, the results will be a lot. little, the results will be a lot.</h2>
+                <h2 className="cheers-subtitle">If we all do a little, the results will be a lot.</h2>
                 <div className='btn-row d-flex justify-content-center gap-3'>
                     <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Partner-Form')}>Partner With Us</button>
                     <button type="button" className="btn btn-outline-primary" onClick={() => navigate('/Volunteer-Form')}>Volunteer</button>
@@ -55,7 +55,7 @@ export default function Homepage() {
                     </ul>
                 </div>
                 <div className='programs'>
-                    <h1 className="header"> Programs & Resources</h1> 
+                    <h1 className="header"> Programs & Resources</h1>
                     <p className="body-text-bold"> Quick access to programs details, download flyers, and partnership materials for the schools and funders.</p>
                     <div className='btn-row'>
                         <div className='btn-col'>
