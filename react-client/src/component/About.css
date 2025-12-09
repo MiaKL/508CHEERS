@@ -53,8 +53,40 @@
 /* Feature cards */
 .feature-cards{margin:64px 26px 0}
 .feature{background:var(--blue);color:#fff; height:auto;padding:25px;width:100%;box-sizing:border-box;text-align:left;}
-.feature img{width:100px;height:100px;display:block;margin:10px auto;}
+.feature img{width:80px;height:80px;display:block;margin:0 auto 10px;}
 .feature p{margin-top: 25px; font:var(--h3-font);overflow:auto}
+
+/* Make the feature card content centered vertically and horizontally
+   so icons (or images) sit centered above the text like the original design. */
+.feature{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* Support bootstrap icons or inline SVGs placed inside .feature
+   — center them and make them match the previous image sizing. */
+.feature i,
+.feature .bi,
+.feature svg{
+  display:block;
+  margin:0 auto 10px; /* remove top margin, keep small bottom gap */
+  width:auto; /* allow proportional scaling */
+  height:80px; /* slightly smaller icon height */
+  font-size:80px; /* for icon fonts/SVGs that scale with font-size */
+  color: #fff; /* keep icons visible on the blue feature background */
+}
+
+@media (max-width:600px){
+  .feature i,
+  .feature .bi,
+  .feature svg{
+    height:60px;
+    font-size:60px;
+  }
+  .feature img{width:60px;height:60px;}
+}
 
 /* Board */
 .board{padding:24px 20px} /* keep padding around the rows */

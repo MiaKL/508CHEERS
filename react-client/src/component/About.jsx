@@ -105,19 +105,19 @@ export default function About() {
             <div className="row feature-cards">
               <div className="col-lg-4 col-md-12 d-flex mb-2">
                   <div className="feature">
-                  <img src="/images/cheer-up.svg" alt="icon" />
+                  <i className="bi bi-person-arms-up"></i>
                   <p>508 C.H.E.E.R.S. empowers BIPOC, low-income, and underserved youth through mentorship, community service, and mutual aid projects.</p>
                 </div>
               </div>
                 <div className="col-lg-4 col-md-12 d-flex mb-2">
                   <div className="feature">
-                  <img src="/images/sprout.svg" alt="icon" />
+                  <i className="bi bi-leaf-fill"></i>
                   <p>We address food insecurity, promote health and wellness, and create pathways for personal and community growth.</p>
                 </div>
               </div>
                 <div className="col-lg-4 col-md-12 d-flex mb-2">
                   <div className="feature">
-                  <img src="/images/charity.svg" alt="icon" />
+                  <i className="bi bi-mortarboard"></i>
                   <p>Together, we're building a more equitable, connected, and compassionate Worcester, one youth leader at a time.</p>
                 </div>
               </div>
