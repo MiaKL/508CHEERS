@@ -12,17 +12,44 @@ export default function About() {
   const boardMembers=[
     {
       name: 'Echo Louissaint',
-      bio: 'Body text for bio here. More description. Even more description. Another bit of description. Final part of the description.',
+      role: 'Executive Director',
+      org: 'Seven Hills Foundation',
       imgSrc: '/images/avatar.png'
     },
     {
-      name: 'Board Member',
-      bio: 'Body text for bio here. More description. Even more description. Another bit of description. Final part of the description.',
+      name: 'Tina Minor',
+      role: 'Vice President',
+      org: 'All-One Credit Union',
       imgSrc: '/images/avatar.png'
     },
     {
-      name: 'Board Member',
-      bio: 'Body text for bio here. More description. Even more description. Another bit of description. Final part of the description.',
+      name: 'Briana Azier',
+      role: 'Secretary',
+      org: "Bri's Sweet Treats",
+      imgSrc: '/images/avatar.png'
+    }, 
+    {
+      name: 'Rebeca Thomas',
+      role: 'Treasurer',
+      org: 'Community Member',
+      imgSrc: '/images/avatar.png'
+    },
+    {
+      name: 'Amy Ebbeson',
+      role: 'Board Member',
+      org: 'Worcester Addresses Childhood Trauma',
+      imgSrc: '/images/avatar.png'
+    },
+    {
+      name: 'Cheryl Brian Schmaltz',
+      role: 'Board Member',
+      org: 'Fallon Healthcare',
+      imgSrc: '/images/avatar.png'
+    },
+    {
+      name: 'Adrianna Horton',
+      role: 'Board Member',
+      org: 'Worcester Community Action Council',
       imgSrc: '/images/avatar.png'
     },
 ]
@@ -63,6 +90,17 @@ export default function About() {
               ))}
             </div>
 
+            <div className="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/-a2pS0T_SGQ"
+                title="508 CHEER in the News May 2024"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            
             {/* Feature cards */}
             <div className="row feature-cards">
               <div className="col-lg-4 col-md-12 d-flex mb-2">
@@ -91,20 +129,48 @@ export default function About() {
             {/* Board Members */}
             <section className="board">
               <h2 className="section-title ">Meet Our Board</h2>
+              {/* First row: 4 exec members */}
               <div className="row board-row">
-                {boardMembers.map((member) => (
-                  <div className="board-card col-lg-4 col-md-12 d-flex" key={member.name}>
+                {boardMembers.slice(0,4).map((member) => (
+                  <div className="board-card col-lg-3 col-md-6 col-sm-12 d-flex" key={member.name}>
                     <div className="board-avatar">
-                       <img src= {member.imgSrc} alt="avatar" />
+                       <img src={member.imgSrc} alt="avatar" />
+                    </div>
+                      <div className="board-body">
+                        <h3 className="board-name">{member.name}</h3>
+                        <div className="board-role">{member.role}</div>
+                        <p className="board-org">{member.org}</p>
+                      </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Second row: remaining 3 members */}
+              <div className="row board-row mt-4">
+                {boardMembers.slice(4).map((member) => (
+                  <div className="board-card col-lg-4 col-md-6 col-sm-12 d-flex" key={member.name}>
+                    <div className="board-avatar">
+                       <img src={member.imgSrc} alt="avatar" />
                     </div>
                     <div className="board-body">
                       <h3 className="board-name">{member.name}</h3>
-                      <p>{member.bio}</p>
+                      <div className="board-role">{member.role}</div>
+                      <p className="board-org">{member.org}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
+
+            {/* Line */}
+            <div className="section-divider" />
+
+            <div className='row_fimg'>
+                <img src='/images/Founder1.png' alt="Founder Message" className='founder-image'/>
+                <img src='/images/Founder2.png' alt="Founder Message" className='founder-image'/>
+                <img src='/images/Founder3.png' alt="Founder Message" className='founder-image'/>
+                <img src='/images/Founder5.png' alt="Founder Message" className='founder-image'/>
+            </div>
 
             {/* Line */}
             <div className="section-divider" />

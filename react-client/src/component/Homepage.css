@@ -80,6 +80,23 @@
   color: var(--black);
 }
 
+
+.banner-image{
+  width: calc(100% - 40px); /* leave 20px space each side */
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+  .banner-image{
+    width: calc(100% - 24px);
+    margin: 0 12px;
+  }
+}
+
 /* Info section */
 .info-section{
   display: flex;
@@ -294,4 +311,27 @@
 
 .socialIcon:hover {
     color: var(--black);
+}
+
+/* Responsive video embed (keeps 16:9 aspect ratio) */
+.video-embed{
+  position:relative;
+  width:100%;
+  max-width:1048px; /* constrain widest embed */
+  padding: 0 20px; /* horizontal breathing room */
+  padding-bottom:50%; /* slightly shorter than 16:9 */
+  height:0;
+  box-sizing: border-box;
+  overflow:hidden;
+  margin: 20px auto;
+}
+.video-embed iframe,
+.video-embed object,
+.video-embed embed{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
 }

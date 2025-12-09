@@ -40,6 +40,11 @@ export default function Homepage() {
                 <h2 className="subtext">508 C.H.E.E.R.S. empowers Worcester’s underserved youth through mentorship, mutual aid, and wellness initiatives to build a more equitable community</h2>
             </div>
 
+             {/* Line */}
+            <div className="section-divider" />
+
+            <img src='/images/tug_of_war.png' alt="Tug of War" className='banner-image'/>
+
             {/* Line */}
             <div className="section-divider" />
 
@@ -69,7 +74,7 @@ export default function Homepage() {
                     </div>
                 </div>
             </div>
-
+        
             {/* Line */}
             <div className="section-divider" />
 
@@ -80,6 +85,18 @@ export default function Homepage() {
                     <input type="email" className="form-control subscribe-input" id="subscribeEmail" placeholder="Enter your email" />
                     <button type="submit" className="btn btn-outline-primary subscribe-btn">Subscribe</button>
                 </form>
+
+                                <div className="video-embed">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/PHUM7bpt6GA"
+                                        title="Advocacy is Service"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    />
+                                </div>
+                
                 <h1 className="header"> Connect With Us  </h1>
                 <div className="container" style={{width: "300px"}}>
                     <div className="row">
