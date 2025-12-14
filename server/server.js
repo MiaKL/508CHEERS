@@ -19,6 +19,40 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+const {MongoClient, ServerApiVersion} = require('mongodb');
+
+// INPUT URI WHEN RUN SERVER (format: "URI="uri" node server.js")
+const uri = process.env.URI;
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
+
+async function run() {
+    try {
+        // Connect the client to the server	(optional starting in v4.7)
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        await client.db("admin").command({ping: 1});
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+}
+
+run().catch(console.dir);
+
+mongoose.connect(uri, {})
+    .then(function (db) {
+        console.log("db connected");
+    });
+
 // Add passport sessions
 const session = require('express-session'); // for writing cookies
 const passport = require('passport'); // to manage user login
@@ -53,11 +87,11 @@ app.listen(3001, function () {
     console.log("server started at 3001");
 });
 
-// connect to mongoose mongodb cheers database
-mongoose.connect('mongodb://localhost:27017/cheers')
-    .then(function (db){
-        console.log("db connected");
-    });
+// // connect to mongoose mongodb cheers database
+// mongoose.connect('mongodb://localhost:27017/cheers')
+//     .then(function (db){
+//         console.log("db connected");
+//     });
 
 // SUBSCRIBE EMAILS
 

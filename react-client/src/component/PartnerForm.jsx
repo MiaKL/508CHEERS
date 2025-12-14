@@ -95,7 +95,7 @@ function PartnerForm() {
                     <div className="row mb-3">
                         <div className="col-md-6">
                             <label className="form-label required-label">
-                                First Business/Organization Name
+                                Business/Organization Name
                             </label>
                             <input
                                 type="text"
