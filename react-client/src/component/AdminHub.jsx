@@ -35,6 +35,21 @@ function AdminHub() {
         }
     ];
 
+    const handleLogout = async () => {
+        try {
+            const res = await fetch("/admin-logout", {
+                method: "POST",
+                credentials: 'include'
+            });
+            const data = await res.json();
+            if (data.message === "success") {
+                navigate("/");
+            }
+        } catch (err) {
+            console.error("Logout failed: ", err);
+        }
+    };
+
     return (
         <div className="container mt-5 pt-4">
             <div className="text-center mb-5">
@@ -48,7 +63,7 @@ function AdminHub() {
                         <div
                             className="card h-100 shadow-sm border-0 text-center p-3"
                             onClick={() => navigate(module.path)}
-                            style={{ cursor: 'pointer' }} // Removed transition and hover logic
+                            style={{ cursor: 'pointer' }}
                         >
                             <div className="card-body d-flex flex-column align-items-center">
                                 <div className={`mb-3 ${module.color}`} style={{ fontSize: '3rem' }}>
@@ -65,6 +80,11 @@ function AdminHub() {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div style={{marginTop: "25px"}}>
+                <button onClick={handleLogout} className="btn btn-outline-dark" style={{width: "100px"}}>
+                    Logout
+                </button>
             </div>
         </div>
     );
