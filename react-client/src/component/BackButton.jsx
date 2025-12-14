@@ -2,10 +2,14 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom';
 
-function BackButton() {
+function BackButton({ navAddress = -1 }) {
     const navigate = useNavigate();
     const goBack = () => {
-        navigate(-1);
+        if (navAddress === -1) {
+            navigate(-1);  // Navigate back to the previous page
+        } else {
+            navigate(navAddress);
+        }
     };
 
     return (

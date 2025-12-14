@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import SubmitPopUp from "./SubmitPopUp";
 
 function PartnerForm() {
+
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
     const [formData, setFormData] = useState({
         businessName: "",
@@ -10,7 +13,7 @@ function PartnerForm() {
         secondaryEmail: "",
         secondaryPhone: "",
         feedback: "",
-        agree: false
+        agreeToBeContacted: false
     });
 
     function handleChange(e) {
@@ -38,15 +41,41 @@ function PartnerForm() {
             secondaryEmail: "",
             secondaryPhone: "",
             feedback: "",
-            agree: false
+            agreeToBeContacted: false
         });
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData);
-        alert("Partner form submitted!");
-        clearForm();
+
+        const url = '/save-partner-inquiry';
+        const method = 'POST';
+
+        fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Server responded with an error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.message === 'success') {
+                    setIsPopUpOpen(true);
+                    clearForm();
+                } else {
+                    console.log(data.data || 'An error occurred while saving the partner inquiry.');
+                }
+            })
+            .catch((err) => {
+                console.log('There was an error saving the partner inquiry: ' + err.data || err);
+            });
     }
 
     return (
@@ -108,12 +137,14 @@ function PartnerForm() {
 
                         <div className="col-md-6">
                             <label className="form-label required-label">
-                                Primary Phone Number
+                                Primary Phone Number (xxx-xxx-xxxx)
                             </label>
                             <input
-                                type="text"
+                                type="tel"
                                 name="primaryPhone"
                                 className="form-control table-input"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                placeholder="xxx-xxx-xxxx"
                                 value={formData.primaryPhone}
                                 onChange={handleChange}
                                 required
@@ -134,12 +165,13 @@ function PartnerForm() {
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label">Secondary Phone</label>
+                            <label className="form-label">Secondary Phone (xxx-xxx-xxxx)</label>
                             <input
-                                type="text"
+                                type="tel"
                                 name="secondaryPhone"
                                 className="form-control table-input"
-                                value={formData.secondaryPhone}
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                placeholder="xxx-xxx-xxxx"                                value={formData.secondaryPhone}
                                 onChange={handleChange}
                             />
                         </div>
@@ -147,12 +179,12 @@ function PartnerForm() {
 
                     <div className="mb-3">
                         <label className="form-label required-label">Questions or feedback</label>
-                        <input
-                            type="text"
+                        <textarea
                             name="feedback"
-                            className="form-control table-input"
+                            className="form-control"
                             value={formData.feedback}
                             onChange={handleChange}
+                            rows={3}
                             required
                         />
                     </div>
@@ -161,8 +193,8 @@ function PartnerForm() {
                         <input
                             className="form-check-input"
                             type="checkbox"
-                            name="agree"
-                            checked={formData.agree}
+                            name="agreeToBeContacted"
+                            checked={formData.agreeToBeContacted}
                             onChange={handleChange}
                             required
                         />
@@ -176,6 +208,12 @@ function PartnerForm() {
                     </div>
 
                 </form>
+            </div>
+
+            <div>
+                <SubmitPopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
+                    <h3>Thank you for inquiring about partnering with 508 C.H.E.E.R.S.! We will get back to you in a few business days.</h3>
+                </SubmitPopUp>
             </div>
         </div>
     );

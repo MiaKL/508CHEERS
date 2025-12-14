@@ -1,9 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Homepage.css'; 
+import './Homepage.css';
+import SubmitPopUp from './SubmitPopUp';
 
 export default function Homepage() {
     const navigate = useNavigate();
+
+    const [subscriber, setSubscriber] = useState({
+        email: ''
+    });
+
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // create a new subscriber object to store in database
+        const newSubscriber = {
+            email: subscriber.email
+        };
+
+        const url = '/save-subscriber';
+        const method = 'POST';
+
+        fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newSubscriber),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Server responded with an error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.message === 'success') {
+                    setIsPopUpOpen(true);
+                    setSubscriber({ ...subscriber, email: '' });
+                } else {
+                    console.log(data.data || 'An error occurred while saving the subscriber email.');
+                }
+            })
+            .catch((err) => {
+                console.error('Error saving subscriber: ', err);
+                console.log('There was an error saving the subscriber email: ' + err.data || err);
+            });
+    };
+
     return (
         <div>
             {/* Carousel Section */}
@@ -81,11 +127,20 @@ export default function Homepage() {
             {/* Other Info Section */}
             <div className='Other-info'>
                 <h1 className="header"> Subscribe and Stay Updated! </h1>
-                <form className="subscribe-form">
-                    <input type="email" className="form-control subscribe-input" id="subscribeEmail" placeholder="Enter your email" />
+                <form className="subscribe-form" onSubmit={handleSubmit}>
+                    <input type="email" className="form-control subscribe-input" id="subscribeEmail"
+                           value={subscriber.email}
+                           placeholder="Enter your email"
+                           onChange={(e) => setSubscriber({ ...subscriber, email: e.target.value })}
+                           required
+                    />
                     <button type="submit" className="btn btn-outline-primary subscribe-btn">Subscribe</button>
                 </form>
-
+                <div>
+                    <SubmitPopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
+                        <h2>Thank you for subscribing!</h2>
+                    </SubmitPopUp>
+                </div>
                                 <div className="video-embed">
                                     <iframe
                                         src="https://www.youtube.com/embed/PHUM7bpt6GA"

@@ -1,15 +1,21 @@
 import React from "react";
 import ProgramCard from "./ProgramCard";
+import AdminButtonCreate from "./AdminButtonCreate";
 
 import {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Programs() {
     const [programs, setPrograms] = React.useState([]);
     const [error, setError] = React.useState(null);
+    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const res= await fetch("http://localhost:3001/get-all-programs");
+                const res= await fetch("/get-all-programs",
+                    {credentials: "include"});
                 if (!res.ok) {
                     throw new Error("Failed fetching programs error: " + res.status);
                 }
@@ -24,11 +30,45 @@ function Programs() {
             }
         }
         fetchPrograms();
-    })
+    }, [])
+
+    function onCreate() {
+        navigate(`/add-program`);
+    }
+
+    useEffect(() => {
+        const checkAuth = async () => {
+            try {
+                const res = await fetch("/get-current-user", {
+                    credentials: 'include'
+                });
+                const data = await res.json();
+
+                if (data.data === true) {
+                    setIsLoggedIn(true);
+                } else {
+                    setIsLoggedIn(false);
+                }
+            } catch (err) {
+                console.error("Auth check failed:", err.message);
+                setIsLoggedIn(false);
+            }
+        };
+        checkAuth();
+    }, [])
+
     return (
         <section id="programs_section" className="page">
             <div>
                 <h1>Youth Programs</h1>
+
+                {/* only show admin create program button if logged in as admin */}
+                {isLoggedIn &&
+                    // only show admin buttons if logged in as admin
+                    <div className="container position-relative" >
+                        <AdminButtonCreate onCreate={onCreate}/>
+                    </div>
+                }
             </div>
             <div>
                 <h4 className="programs-subtitle">Empowering Worcester - One Act at a Time.</h4>

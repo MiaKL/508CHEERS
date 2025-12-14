@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import SubmitPopUp from "./SubmitPopUp";
 
 function VolunteerForm() {
+
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -44,9 +47,36 @@ function VolunteerForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
+
         console.log(formData);
-        alert("Form submitted!");
-        clearForm();
+
+        const url = '/save-volunteer-inquiry';
+        const method = 'POST';
+
+        fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Server responded with an error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.message === 'success') {
+                    setIsPopUpOpen(true);
+                    clearForm();
+                } else {
+                    console.log(data.data || 'An error occurred while saving the volunteer inquiry.');
+                }
+            })
+            .catch((err) => {
+                console.log('There was an error saving the volunteer inquiry: ' + err.data || err);
+            });
     }
 
     return (
@@ -118,11 +148,13 @@ function VolunteerForm() {
                         </div>
 
                         <div className="col-md-6">
-                            <label className="form-label required-label">Emergency Contact Phone Number</label>
+                            <label className="form-label required-label">Emergency Contact Phone Number (xxx-xxx-xxxx)</label>
                             <input
                                 className="form-control table-input"
-                                type="text"
+                                type="tel"
                                 name="emergencyPhone"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                placeholder="xxx-xxx-xxxx"
                                 value={formData.emergencyPhone}
                                 onChange={handleChange}
                                 required
@@ -175,6 +207,12 @@ function VolunteerForm() {
 
                 </form>
 
+            </div>
+
+            <div>
+                <SubmitPopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
+                    <h3>Thank you for inquiring about volunteering with 508 C.H.E.E.R.S.! We will get back to you in a few business days.</h3>
+                </SubmitPopUp>
             </div>
         </div>
     );

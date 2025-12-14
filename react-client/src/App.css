@@ -388,3 +388,32 @@ h1 {
         column-count: 1;
     }
 }
+
+.edit_button {
+    background-color: #f1a02f !important;
+    color: var(--white) !important;
+}
+
+.edit_button:hover, .edit_button:focus, .edit_button:active {
+    background-color: #e68927 !important;
+    color: var(--white) !important;
+}
+
+.btn_outline_no_fill {
+    background-color: transparent !important;
+    border-color: #0dcaf0 !important;
+    color: #0dcaf0 !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn_outline_no_fill:hover,
+.btn_outline_no_fill:active,
+.btn_outline_no_fill:focus {
+    background-color: rgba(13, 202, 240, 0.08) !important;
+    color: #0dcaf0 !important;
+    border-color: #0dcaf0 !important;
+}
+
+.list_element_title {
+    color: var(--dark-blue) !important;
+}
