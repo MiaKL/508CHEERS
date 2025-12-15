@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
 import SubmitPopUp from './SubmitPopUp';
+import { Carousel } from 'react-bootstrap';
 
 export default function Homepage() {
     const navigate = useNavigate();
@@ -52,20 +53,29 @@ export default function Homepage() {
 
     return (
         <div>
-            {/* Carousel Section */}
-            <div id="partnersCarousel" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="/images/vision_img.png" className="d-block w-100" alt="Slide 1" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/vision_img.png" className="d-block w-100" alt="Slide 2" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/vision_img.png" className="d-block w-100" alt="Slide 3" />
-                    </div>
-                </div>
+            <div className={'d-block mx-auto'} style={{width: "97.5%"}}>
+                <Carousel id="partnersCarousel" pause={false} controls={true}>
+                    <Carousel.Item>
+                        <img src="/images/vision_img.png" className="d-block w-100 carousel_uniform" alt="Slide 1" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src="/images/carousel2.jpeg" className="d-block w-100 carousel_uniform" alt="Slide 2" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src="/images/carousel3.jpeg" className="d-block w-100 carousel_uniform" alt="Slide 3" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src="/images/carousel4.jpeg" className="d-block w-100 carousel_uniform" alt="Slide 4" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src="/images/carousel5.jpeg" className="d-block w-100 carousel_uniform" alt="Slide 5" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src="/images/carousel6.jpeg" className="d-block w-100 carousel_uniform" alt="Slide 6" />
+                    </Carousel.Item>
+                </Carousel>
             </div>
+
 
             {/* Hero Title Section */}
             <div className="hero-title">

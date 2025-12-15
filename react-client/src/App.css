@@ -417,3 +417,9 @@ h1 {
 .list_element_title {
     color: var(--dark-blue) !important;
 }
+
+.carousel_uniform {
+    height: 500px;
+    width: 10%;
+    object-fit: cover;
+}
