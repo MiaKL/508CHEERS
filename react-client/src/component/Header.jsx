@@ -10,14 +10,16 @@ function Heading() {
                         C.H.E.E.R.S.
                     </a>
                     <div className="navbar-nav align-items-center w-100 justify-content-around">
-                        <a className="nav-link" href="/">About</a>
-                        <a className="nav-link" href="/">Impact</a>
                         <a className="nav-link" href="/Programs">Programs</a>
-                        <a className="nav-link" href="/">Flyers</a>
-                        <a className="nav-link" href="/">Get Involved</a>
+                        <a className="nav-link" href="/FlyersDownloads">Flyers & Downloads</a>
+                        <a className="nav-link" href="/Partner-Form">Partner</a>
+                        <a className="nav-link" href="/Volunteer-Form">Volunteer</a>
+                        <a className="nav-link" href="/About">About</a>
+                        <a className="btn btn-primary" href="https://secure.qgiv.com/for/508cheers" role="button">Donate</a>
                     </div>
                 </div>
             </nav>
+            <hr/>
         </section>
     );
 }

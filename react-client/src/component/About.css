@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Quicksand:wght@600;700&display=swap');
+
+:root{
+  /* Color Styles */
+  --blue: #00508D;
+  --white: #ffffff;
+  --black: #000000;
+  --container: 1100px;
+
+  /* Font shorthand variables (weight size family) */
+  /* Format: weight size/line-height family, fallback-family... */
+  --title-font: 700 64px/1.05 "SF Pro", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h1-bold-font: 700 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h1-font: 400 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h2-font: 400 32px/1.1 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h2-bold-font: 700 32px/1.1 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h3-font: 400 24px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h3-bold-font: 700 24px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-font: 400 24px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-bold-font: 700 24px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --button-font: 700 16px/1.25 "Quicksand", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --large-button-font: 600 24px/1.25 "Quicksand", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --p-font: 400 16px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --stats-font: 400 48px/1.05 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --brand-font: 800 28px "SF Pro";
+  --value-letter-font: 800 64px "SF Pro";
+
+}
+
+
+/* title  */
+.page-title{text-align:center;font:var(--title-font);margin:10px 0 10px}
+
+/* our vision */
+.vision{display:flex;gap:32px;align-items:center; margin:0 35px;}
+.vision-text{flex:1; margin: 50px; text-align: left;}
+.vision-text h1{font:var(--h1-bold-font);margin:0 0 11px}
+.vision-text h2{font:var(--h2-font);max-width:720px}
+.vision-image img{width:438px;height:auto;object-fit:cover;}
+
+/* blue line */
+.section-divider{height:4px;background:var(--blue);width: 95%;margin:25px auto}
+
+/* Cheers */ 
+.section-title{text-align:center;font:var(--h1-bold-font);margin:8px 0 18px}
+
+/* Cheers boxes */
+.values-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;padding:16px 0}
+.value-card{width:210px;border:1px solid var(--blue);padding:18px;text-align:center;background:var(--white)}
+.value-letter{color:var(--blue);font:var(--title-font);margin-bottom:8px}
+.value-text{color:var(--blue);font:var(--h3-font)}
+
+/* Feature cards */
+.feature-cards{margin:64px 26px 0}
+.feature{background:var(--blue);color:#fff; height:auto;padding:25px;width:100%;box-sizing:border-box;text-align:left;}
+.feature img{width:80px;height:80px;display:block;margin:0 auto 10px;}
+.feature p{margin-top: 25px; font:var(--h3-font);overflow:auto}
+
+/* Make the feature card content centered vertically and horizontally
+   so icons (or images) sit centered above the text like the original design. */
+.feature{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* Support bootstrap icons or inline SVGs placed inside .feature
+   — center them and make them match the previous image sizing. */
+.feature i,
+.feature .bi,
+.feature svg{
+  display:block;
+  margin:0 auto 10px; /* remove top margin, keep small bottom gap */
+  width:auto; /* allow proportional scaling */
+  height:80px; /* slightly smaller icon height */
+  font-size:80px; /* for icon fonts/SVGs that scale with font-size */
+  color: #fff; /* keep icons visible on the blue feature background */
+}
+
+@media (max-width:600px){
+  .feature i,
+  .feature .bi,
+  .feature svg{
+    height:60px;
+    font-size:60px;
+  }
+  .feature img{width:60px;height:60px;}
+}
+
+/* Board */
+.board{padding:24px 20px} /* keep padding around the rows */
+.board-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.board-card{
+  background:#fff;
+  border:1px solid var(--blue);
+  padding:8px; /* further reduced padding */
+  display:flex;
+  gap:6px; /* tighter gap between avatar and text */
+  align-items:center;
+  max-width: 280px; /* smaller card width for compact layout */
+  box-sizing: border-box;
+}
+.board-avatar img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:6px;
+}
+.board-avatar{ /* prevent avatar from stretching */
+  flex: 0 0 auto;
+}
+.board-body{ /* let the text area take remaining space */
+  flex: 1 1 auto;
+  min-width: 0; /* allows text truncation/wrapping inside flex */
+}
+.board-name{
+  margin:0 0 4px;
+  font-size:16px; /* smaller name */
+  font-weight:700;
+}
+.board-role{ /* role text between name and org */
+  margin-bottom:4px;
+  font: var(--p-font);
+}
+.board-org{
+  margin:0;
+  font-size:13px; /* smaller body text */
+  line-height:1.25;
+}
+
+/* Center text for the top (first) board row only */
+.board-row:first-of-type .board-body {
+  text-align: center;
+}
+
+/* Partners */
+.partners{padding:18px 0;text-align:center}
+.partners-title{font:var(--h2-bold-font);}
+.partners-strip{border:1px solid var(--blue);padding:22px;margin:12px 0}
+.partners-strip img{max-width:100%;height:80px;object-fit:contain}
+
+/* Partners carousel styles moved to PartnerCarousel.css */
+.outlined-btn{display:inline-block;border:3px solid var(--blue);color:var(--blue);padding:8px 18px;border-radius:4px;text-decoration:none;font:var(--button-font)}
+.partner-cta{margin-top:12px}
+
+/* Responsive video embed (keeps 16:9 aspect ratio) */
+.video-embed{
+  position:relative;
+  width:100%;
+  max-width:1048px; /* constrain widest embed */
+  padding: 0 20px; /* horizontal breathing room */
+  padding-bottom:50%; /* slightly shorter than 16:9 */
+  height:0;
+  box-sizing: border-box;
+  overflow:hidden;
+  margin: 20px auto;
+}
+.video-embed iframe,
+.video-embed object,
+.video-embed embed{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+
+
+/* Responsive */
+@media (max-width:900px){
+  .vision{flex-direction:column}
+  .vision-image img{width:100%;max-width:420px}
+}
+
+@media (max-width:600px){
+  .values-row{gap:8px}
+}
+
+@media (max-width:900px){
+  .board-avatar img{ width:80px; height:80px; }
+  .board-card{ max-width: 100%; }
+}
+
+@media (max-width:420px){
+  .values-row{gap:6px}
+}
+
+/* Founder images row: keep 3 images in a single row */
+.row_fimg{
+  display:flex;
+  gap:0; /* remove spacing between images */
+  justify-content:center;
+  align-items:flex-start;
+  flex-wrap:nowrap; /* keep them in one row */
+  margin:0 auto 20px;
+  padding: 0 10px; /* small side padding */
+  box-sizing: border-box;
+  overflow-x:auto; /* allow horizontal scroll if viewport is very narrow */
+}
+.row_fimg .founder-image{
+  flex: 0 0 auto;
+  height: 260px; /* slightly larger fixed equal height */
+  width: auto; /* preserve aspect ratio */
+  max-width: 33.3333%;
+  object-fit:contain; /* avoid cropping */
+  display:block;
+}
+
+/* Responsive reductions so images don't become too tall on smaller screens */
+@media (max-width:1200px){
+  .row_fimg .founder-image{ height: 220px; }
+}
+
+@media (max-width:600px){
+  /* allow stacking on very small screens and reduce height */
+  .row_fimg{ flex-wrap:wrap; }
+  .row_fimg .founder-image{ flex: 1 1 100%; max-width:100%; height: 160px; }
+}
+
