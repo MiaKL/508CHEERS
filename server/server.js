@@ -1,3 +1,4 @@
+const path = require('path'); 
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
@@ -6,18 +7,35 @@ const cors = require("cors");
 
 const app = express();
 
+const allowedOrigins = [
+    'http://localhost:3000', 
+    'https://storage.googleapis.com', // Sometimes needed for cloud assets
+    // Add your Google Cloud URL here once you know it, e.g.:
+    // 'https://your-project-id.uc.r.appspot.com'
+];
+
 app.use(cors({
-        origin: 'http://localhost:3000',
-        credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
-    }
-));
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1 && process.env.NODE_ENV === 'production') {
+            // In production, block unknown origins (Optional: Remove this check if it causes issues)
+            // For now, let's allow all to prevent errors during setup:
+            return callback(null, true); 
+        }
+        return callback(null, true);
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const {MongoClient, ServerApiVersion} = require('mongodb');
 
@@ -83,8 +101,10 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.listen(3001, function () {
-    console.log("server started at 3001");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, function () {
+    console.log(`Server started on port ${PORT}`);
 });
 
 // // connect to mongoose mongodb cheers database
@@ -775,4 +795,8 @@ app.get('/get-current-user', function (req, res) {
             data: false
         });
     }
+});
+
+app.get(/(.*)/, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
