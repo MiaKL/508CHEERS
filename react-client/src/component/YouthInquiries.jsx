@@ -39,7 +39,7 @@ function YouthInquiries() {
     useEffect(() => {
         const fetchInquiries = async () => {
             try {
-                const res = await fetch("http://localhost:3001/get-all-youth-inquiries", {
+                const res = await fetch("/get-all-youth-inquiries", {
                     credentials: 'include'
                 });
                 const data = await res.json();

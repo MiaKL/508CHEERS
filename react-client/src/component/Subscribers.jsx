@@ -18,7 +18,7 @@ function Subscribers() {
     useEffect(() => {
         const fetchSubscribers = async () => {
             try {
-                const res = await fetch("http://localhost:3001/get-all-subscribers", {
+                const res = await fetch("/get-all-subscribers", {
                     credentials: 'include'
                 });
                 const data = await res.json();

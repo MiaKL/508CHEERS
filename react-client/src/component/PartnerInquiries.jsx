@@ -39,7 +39,7 @@ function PartnerInquiries() {
     useEffect(() => {
         const fetchInquiries = async () => {
             try {
-                const res = await fetch("http://localhost:3001/get-all-partner-inquiries", {
+                const res = await fetch("/get-all-partner-inquiries", {
                     credentials: 'include'
                 });
                 const data = await res.json();
