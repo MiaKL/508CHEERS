@@ -174,25 +174,27 @@ function ProgramDetails() {
 
     return (
         <section id="program_details_section" className="page">
-            <div className="back_button_container">
-                <BackButton navAddress={"/Programs"}/>
-            </div>
             {isLoggedIn &&
                 <AdminButtons onEdit={onEdit} onDelete={onDelete}/>
             }
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4 me-md-1" style={{alignSelf: "center", paddingBottom: "30px"}}>
-                        <img className="card-img-top" src={programDetails.imageURL} alt="Program"/>
-                    </div>
-                    <div className="col-md-7">
-                        <h2 className="blue_bold">{programDetails.title}</h2>
-                        <h5 className="bold">Meets {convertDayToText(programDetails.day)}s {convertToStdTimeText(programDetails.startTime, ((programDetails.startTime < 12 && programDetails.endTime >= 12) || (programDetails.startTime >= 12 && programDetails.endTime < 12)))}-{convertToStdTimeText(programDetails.endTime, true)}</h5>
-                        <div className="container" style={{paddingTop: "20px"}}>
-                            <p className="text-start">{programDetails.overview}</p>
-                            <p className="text-start">{programDetails.description}</p>
+            <div className="layout-container container mt-3">
+                <div className="back_button_container button-bar d-flex justify-content-between mb-3">
+                    <BackButton navAddress={"/Programs"}/>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-4 me-md-1" style={{alignSelf: "center", paddingBottom: "30px"}}>
+                            <img className="card-img-top" src={programDetails.imageURL} alt="Program"/>
                         </div>
-                        <a className="btn btn-outline-primary" style={{width: "200px", marginTop: "20px"}} href="/Youth-Form" role="button">Sign Up</a>
+                        <div className="col-md-7">
+                            <h2 className="blue_bold">{programDetails.title}</h2>
+                            <h5 className="bold">Meets {convertDayToText(programDetails.day)}s {convertToStdTimeText(programDetails.startTime, ((programDetails.startTime < 12 && programDetails.endTime >= 12) || (programDetails.startTime >= 12 && programDetails.endTime < 12)))}-{convertToStdTimeText(programDetails.endTime, true)}</h5>
+                            <div className="container" style={{paddingTop: "20px"}}>
+                                <p className="text-start">{programDetails.overview}</p>
+                                <p className="text-start">{programDetails.description}</p>
+                            </div>
+                            <a className="btn btn-outline-primary" style={{width: "200px", marginTop: "20px"}} href="/Youth-Form" role="button">Sign Up</a>
+                        </div>
                     </div>
                 </div>
             </div>

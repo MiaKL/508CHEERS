@@ -68,7 +68,7 @@ function Subscribers() {
 
     return (
         <div className="container mt-5">
-            <div className="back_button_container">
+            <div className="back_button_container" style={{ display: 'flex', justifyContent: 'flex-start', padding: '10px' }}>
                 <BackButton navAddress={"/admin-hub"}/>
             </div>
             <div className="d-flex flex-column align-items-center">
